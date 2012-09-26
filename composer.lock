@@ -1,0 +1,54 @@
+{
+    "hash": "79526e1f083b0f8bdbc05053484aad8d",
+    "packages": [
+        {
+            "name": "kloy/cli",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/kloy/cli.git",
+                "reference": "0.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/kloy/cli/zipball/0.0.2",
+                "reference": "0.0.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Cli": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Keith Loy",
+                    "email": "ckeithloy@gmail.com",
+                    "homepage": "http://keithloy.me"
+                }
+            ],
+            "description": "Composer compatible stand alone port of Fuel's Cli class.",
+            "homepage": "https://github.com/kloy/cli",
+            "keywords": [
+                "cli",
+                "fuel"
+            ]
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
+}
