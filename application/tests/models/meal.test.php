@@ -1,7 +1,11 @@
 <?php
-
 class MealTest extends PHPUnit_Framework_TestCase
 {
+
+    public function tearDown()
+    {
+        
+    }
     public function testSave()
     {
         $meal = new Meal();
@@ -15,7 +19,7 @@ class MealTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($meal->name, $mealFound->name);
         $this->assertEquals($meal->description, $mealFound->description);
         $this->assertEquals($meal->price, $mealFound->price);
-        $mealFound->delete();
+        $meal->delete();
     }
 }
 

@@ -18,6 +18,10 @@ class ComposerAutoloaderInit
         $vendorDir = dirname(__DIR__);
         $baseDir = dirname($vendorDir);
 
+        $includePaths = require __DIR__ . '/include_paths.php';
+        array_push($includePaths, get_include_path());
+        set_include_path(join(PATH_SEPARATOR, $includePaths));
+
         $map = require __DIR__ . '/autoload_namespaces.php';
         foreach ($map as $namespace => $path) {
             $loader->add($namespace, $path);
@@ -29,6 +33,14 @@ class ComposerAutoloaderInit
         }
 
         $loader->register();
+
+        require $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Autoload.php';
+        require $vendorDir . '/phpunit/php-text-template/Text/Template/Autoload.php';
+        require $vendorDir . '/phpunit/php-code-coverage/PHP/CodeCoverage/Autoload.php';
+        require $vendorDir . '/phpunit/php-timer/PHP/Timer/Autoload.php';
+        require $vendorDir . '/phpunit/php-token-stream/PHP/Token/Stream/Autoload.php';
+        require $vendorDir . '/phpunit/phpunit-mock-objects/PHPUnit/Framework/MockObject/Autoload.php';
+        require $vendorDir . '/phpunit/phpunit/PHPUnit/Autoload.php';
 
         return $loader;
     }
