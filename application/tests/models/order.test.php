@@ -26,18 +26,20 @@ class OrderTest extends PHPUnit_Framework_TestCase
         $meal->name = 'beef';
         $meal->description = 'beef with potat';
         $meal->price = 20.00;
+        $meal->save();
 
         $meal2 = new Meal();
         $meal2->name = 'chicken';
         $meal2->description = 'beef with potat';
         $meal2->price = 10.00;
+        $meal2->save();
 
         $order = new Order();
         $order->eta = '9:00';
         $order->payment_method = 'cash';
         $customer->orders()->insert($order);
-        $order->meals()->insert($meal);
-        $order->meals()->insert($meal2);
+        $order->meals()->attach($meal->id);
+        $order->meals()->attach($meal2->id);
 
 
 
