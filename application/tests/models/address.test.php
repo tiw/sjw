@@ -23,9 +23,8 @@ class AddressTest extends PHPUnit_Framework_TestCase
         $customer2 = new Customer();
         $customer->find(1);
         $addresses = $customer->addresses()->get();
-        foreach ($addresses as $adr) {
-            echo $adr->address;
-        }
+
+        $this->assertEquals(2, count($addresses));
         $address->delete();
         $address2->delete();
         $customer->delete();
